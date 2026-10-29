@@ -13,8 +13,15 @@ public class GameTests {
     }
 
     @Test
-    public void test_loadFrames() {
-        List<Frame> list = DefinitionLoader.loadFrames();
+    public void test_loading() {
+        //TODO: Edit when content has been added
+        List list = DefinitionLoader.loadFrames();
+        assertTrue(list.isEmpty());
+        list = DefinitionLoader.loadShopTiers();
+        assertTrue(list.isEmpty());
+        list = DefinitionLoader.loadSkills();
+        assertTrue(list.isEmpty());
+        list = DefinitionLoader.loadParts();
         assertTrue(list.isEmpty());
     }
 }

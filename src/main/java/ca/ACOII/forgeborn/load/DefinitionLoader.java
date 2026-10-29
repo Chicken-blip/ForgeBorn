@@ -2,6 +2,8 @@ package ca.ACOII.forgeborn.load;
 
 import ca.ACOII.forgeborn.core.model.Frame;
 import ca.ACOII.forgeborn.core.model.Part;
+import ca.ACOII.forgeborn.core.model.ShopTier;
+import ca.ACOII.forgeborn.core.model.Skill;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -24,6 +26,22 @@ public class DefinitionLoader {
             return mapper.readValue(inStrm, mapper.getTypeFactory().constructCollectionType(List.class, Part.class));
         } catch (IOException e) {
             throw new RuntimeException("Failed to read parts.json | ", e);
+        }
+    }
+    public static List<Skill> loadSkills() {
+        try (InputStream inStrm = DefinitionLoader.class.getResourceAsStream("/defs/skills.json")) {
+            if (inStrm == null) throw new RuntimeException("skills.json not found");
+            return mapper.readValue(inStrm, mapper.getTypeFactory().constructCollectionType(List.class, Skill.class));
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read skills.json | ", e);
+        }
+    }
+    public static List<ShopTier> loadShopTiers() {
+        try (InputStream inStrm = DefinitionLoader.class.getResourceAsStream("/defs/shop_tiers.json")) {
+            if (inStrm == null) throw new RuntimeException("shop_tiers.json not found");
+            return mapper.readValue(inStrm, mapper.getTypeFactory().constructCollectionType(List.class, ShopTier.class));
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to read shop_tiers.json | ", e);
         }
     }
     public static void resolve() {
