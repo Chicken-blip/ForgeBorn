@@ -1,1 +1,8 @@
-[]
+[
+  {"id": "test_arm",
+    "name": "Test Arm",
+    "statVals": {"power": 3},
+    "slotType": "arm",
+    "price": 10
+  }
+]

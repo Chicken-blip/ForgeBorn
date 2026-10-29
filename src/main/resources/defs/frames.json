@@ -1,1 +1,7 @@
-[]
+[
+  {"id": "test_frame",
+    "name": "Test Frame",
+    "statVals": {"power": 3, "speed": 4},
+    "slotTypes": ["arm"]
+  }
+]

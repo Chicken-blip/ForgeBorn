@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "powered_strike",
+    "name": "Powered Strike",
+    "prereqs": [
+      {"kind": "stat", "statId": "power", "val": 5}
+    ],
+    "energyCost": 0,
+    "damage": 0,
+    "isBasic": false
+  },
+  {
+    "id": "powered_jab",
+    "name": "Powered Jab",
+    "prereqs": [
+      {"kind": "skill", "skillId": "powered_strike"}
+    ],
+    "energyCost": 0,
+    "damage": 0,
+    "isBasic": false
+  },
+  {
+    "id": "improved_arm_dexterity",
+    "name": "Improved Arm Dexterity",
+    "prereqs": [
+      {"kind": "part", "slotType": "arm", "statId": "power", "value": 2}
+    ],
+    "energyCost": 0,
+    "damage": 0,
+    "isBasic": false
+  }
+]
