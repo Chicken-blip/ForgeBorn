@@ -11,7 +11,7 @@ public class Calculator {
         for (Prerequisite prereq : skill.prereqs()) {
             if (prereq instanceof PartPrereq(String slotType, String statId, int value)) {
                 int total = 0;
-                for (Part p : construct.fittedParts()) {
+                for (Part p : construct.getFittedParts()) {
                     if (Objects.equals(slotType, p.slotType())) {
                         total += p.statVals().getOrDefault(statId, 0);
                     }
@@ -19,10 +19,10 @@ public class Calculator {
                 if (total < value) return false;
             }
             if (prereq instanceof SkillPrereq(String skillId)) {
-                if (construct.learnedSkillIds().isEmpty() || !construct.learnedSkillIds().contains(skillId)) return false;
+                if (construct.getLearnedSkillIds().isEmpty() || !construct.getLearnedSkillIds().contains(skillId)) return false;
             }
             if (prereq instanceof StatPrereq(String statId, int val)) {
-                if (construct.stats().get(statId) < val) return false;
+                if (construct.getEffectiveStat(statId) < val) return false;
             }
         }
         return true;
@@ -32,8 +32,11 @@ public class Calculator {
         return allSkills.stream().filter(new Predicate<Skill>() {
             @Override
             public boolean test(Skill skill) {
-                return canLearnSkill(construct, skill) && !construct.learnedSkillIds().contains(skill.id());
+                return canLearnSkill(construct, skill) && !construct.getLearnedSkillIds().contains(skill.id());
             }
         }).toList();
     }
+
+    public static void addWear(int damage) {}
+    public static void removeWear(int recovery) {}
 }
