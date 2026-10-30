@@ -1,12 +1,36 @@
 [
   {
+    "id": "jab",
+    "name": "Jab",
+    "prereqs": [],
+    "energyCost": 0,
+    "damage": 3,
+    "isBasic": true
+  },
+  {
+    "id": "hook",
+    "name": "Hook",
+    "prereqs": [],
+    "energyCost": 0,
+    "damage": 2,
+    "isBasic": true
+  },
+  {
+    "id": "straight",
+    "name": "Straight",
+    "prereqs": [],
+    "energyCost": 0,
+    "damage": 4,
+    "isBasic": true
+  },
+  {
     "id": "powered_strike",
     "name": "Powered Strike",
     "prereqs": [
       {"kind": "stat", "statId": "power", "val": 5}
     ],
-    "energyCost": 0,
-    "damage": 0,
+    "energyCost": 1,
+    "damage": 5,
     "isBasic": false
   },
   {

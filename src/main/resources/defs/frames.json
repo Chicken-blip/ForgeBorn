@@ -1,7 +1,12 @@
 [
   {"id": "test_frame",
     "name": "Test Frame",
-    "statVals": {"power": 3, "speed": 4},
+    "statVals": {"power": 3, "speed": 4, "endurance": 1, "energy": 5, "hull": 10},
+    "slotTypes": ["arm"]
+  },
+  {"id": "basic_opp_frame",
+    "name": "Basic Opponent Frame",
+    "statVals": {"power": 2, "speed": 2, "endurance": 2, "energy": 5, "hull": 10},
     "slotTypes": ["arm"]
   }
 ]

@@ -11,7 +11,7 @@ public class ConstructState {
     private Map<String, Integer> stats;
     private int wear;
     public static int maxWear = 100;
-    public static String[] trainiableSkills = {"power", "speed"};
+    public static String[] trainiableSkills = {"power", "speed", "endurance"};
     public ConstructState(Frame base) {
         learnedSkillIds = new ArrayList<>();
         fittedParts = new ArrayList<>();
